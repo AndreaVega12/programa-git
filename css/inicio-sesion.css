@@ -1,0 +1,48 @@
+form {
+    background-color: #ecf3f3;
+    font-size: 2em; 
+    width: fit-content;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+body{
+    height: 100%;
+    position: relative;
+    margin: 0px;
+}
+img {
+    width:200px;
+    margin-top: 100px;
+    margin: auto;
+    margin-bottom: 30px;
+    
+}
+input[type="submit"]{
+    color:  #ffffff;
+    font-weight: bolder;     
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+    border-radius: 4px;
+    background-color:#757575        
+}
+
+form * {
+    display: block;
+}
+label, input {
+    color: #212121;
+    
+}
+form > label{
+    font-style: italic;
+}
+
+html{
+    font-size: 16px;
+    background-color: #ecf3f3;
+    height: 100%;
+}
+

@@ -1,0 +1,287 @@
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+
+    25% {
+        left: -50%;
+    }
+
+    50% {
+        left: 0%;
+    }
+
+    75% {
+        left: 50%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: PT Serif;
+    background-color: #ecf3f3;
+    color: #212121;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.absolute_middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup>.main {
+    background: #FFF;
+    border: solid 1px #212121;
+    padding: 2em;
+    min-width: 30%;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+.popup>.main>div {
+    margin-bottom: 0.5em;
+}
+
+.popup>.main>.title {
+    font-size: 2em;
+}
+
+.popup>.main>.options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup>.main>.options>button {
+    border: none;
+    padding: 0.5em;
+    margin: 0.5em;
+    flex: 1;
+}
+
+.loading {
+    padding: 1em;
+    position: absolute;
+    max-width: 320px;
+    background: rgba(200, 200, 200, 1);
+    z-index: 2;
+    left: 100%;
+    transform: translate(calc(-100% - 1em), 1em);
+    border-radius: 0.3em;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.3);
+}
+
+.loading>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading>.bar {
+    overflow: hidden;
+}
+
+.loading>.bar>.point {
+    width: 0.3em;
+    background: #4caf50;
+    position: relative;
+    padding: 0.3em;
+    animation: loading 1s linear infinite;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background: url("../img/logo-rz-marmol.png") no-repeat fixed center;
+}
+
+.margin-bottom-1em {
+    margin-bottom: 1em;
+}
+
+.flex {
+    display: flex;
+}
+
+.fcol {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-arround {
+    justify-content: space-around;
+}
+
+.card {
+    position: relative;
+    border: solid 0.1em #999;
+    border-radius: 0.2em;
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 0 1.25px 3.75px rgba(0, 0, 0, 0.12), 0 2.5px 5px rgba(0, 0, 0, 0.24);
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.backgr {
+    color: #888;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.break-word {
+    word-break: break-word;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+}
+
+.fab {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    padding: 1em;
+    border-radius: 50%;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.3);
+}
+
+.fab:active {
+    transition-delay: 0s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.menu {
+    background: #0f9d58;
+    transform: translate(-110%, -110%);
+    top: 100%;
+    left: 100%;
+}
+
+.menu span {
+    position: absolute;
+    display: block;
+    height: 0.3em;
+    width: 2em;
+    background: #FFF;
+    top: 45%;
+}
+
+.menu span::after,
+.menu span::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    transition-duration: .3s, .3s;
+    transition-delay: .3s, 0s;
+    transition-property: top, transform;
+}
+
+.menu.open span {
+    background: transparent;
+}
+
+.menu.open span::after,
+.menu.open span::before {
+    transition-delay: 0s, .3s;
+}
+
+.menu.open span::before {
+    top: 0%;
+    transform: rotate(45deg);
+}
+
+.menu.open span::after {
+    top: 0%;
+    transform: rotate(-45deg);
+}
+
+.menu span::before {
+    top: 250%;
+}
+
+.menu span::after {
+    top: -250%;
+}
+
+.menu_list {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition-duration: .3s, .3s;
+    transition-delay: .3s, 0s;
+    max-width: 320px;
+}
+
+.menu_list.open {
+    width: 75%;
+    transition-delay: 0s, .3s;
+}
+
+.accent,
+.accent * {
+    background: #607D8B;
+    color: #FFE0B2;
+}
+
+.imgbtn {
+    width: 16px;
+    height: 16px;
+    margin: 0 16px;
+}
+
+.hidde {
+    display: none;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
